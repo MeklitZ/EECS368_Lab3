@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Practice 3 - Password Verification</title>
+    <style>
+        body {
+            background-color: rgb(214, 137, 137);
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        .container {
+            background-color: white;
+            max-width: 500px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+        input {
+            width: 95%;
+            padding: 10px;
+            margin-top: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Password Verification</h1>
+        <label for="password">
+            Enter Password:
+        </label>
+
+        <input
+            type="password"
+            id="password">
+        <label for="confirmPassword">
+            Enter Password Again:
+        </label>
+
+        <input
+            type="password"
+            id="confirmPassword">
+
+
+
+
+        <button onclick="verifyPassword()">
+            Verify Password
+        </button>
+
+    </div>
+
+    <script>
+
+        function verifyPassword() {
+            let password =
+                document.getElementById("password").value;
+
+            let confirmPassword =
+                document.getElementById("confirmPassword").value;
+
+            if (password.length < 8) {
+
+                alert(
+                    "Your password must be at least 8 characters."
+                );
+
+                return;
+            }
+
+            if (password !== confirmPassword) {
+
+                alert(
+                    "The two passwords are different."
+                );
+
+                return;
+            }
+            alert(
+                "The two passwords match!"
+            );
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Practice 2 - CSS Font Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #myParagraph {
+            padding: 20px;
+            border: 5px solid black;
+            font-size: 18px;
+        }
+        .controls {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+        input {
+            width: 60px;
+            margin: 5px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;}
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Practice 2 - CSS Font Control</h1>
+    <p id="myParagraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        This is some dummy text for my EECS 348 Practice 2 webpage.
+        The color of this text and the border can be changed using
+        the controls below.
+    </p>
+    <div class="controls">
+
+        <h2>Paragraph Font Color</h2>
+
+        <label>
+            Red:
+            <input type="text" id="fontRed">
+        </label>
+
+        <br>
+
+        <label>
+            Green:
+            <input type="text" id="fontGreen">
+        </label>
+        <br>
+        <label>
+            Blue:
+            <input type="text" id="fontBlue">
+        </label>
+
+        <h2>Border Color</h2>
+        <label>
+            Red:
+            <input type="text" id="borderRed">
+        </label>
+
+        <br>
+
+        <label>
+            Green:
+            <input type="text" id="borderGreen">
+        </label>
+
+        <br>
+
+        <label>
+            Blue:
+            <input type="text" id="borderBlue">
+        </label>
+
+        <h2>Border Width</h2>
+
+        <label>
+            Width:
+            <input type="text" id="borderWidth">
+            pixels
+        </label>
+
+        <br>
+
+        <button onclick="changeParagraph()">
+            Apply Changes
+        </button>
+
+    </div>
+
+
+    <script>
+
+        function changeParagraph() {    
+
+            let fontRed =
+                document.getElementById("fontRed").value;
+
+            let fontGreen =
+                document.getElementById("fontGreen").value;
+
+            let fontBlue =
+                document.getElementById("fontBlue").value;
+
+            let borderRed =
+                document.getElementById("borderRed").value;
+
+            let borderGreen =
+                document.getElementById("borderGreen").value;
+
+            let borderBlue =
+                document.getElementById("borderBlue").value;
+            let borderWidth =
+                document.getElementById("borderWidth").value;
+            let paragraph =
+                document.getElementById("myParagraph");
+
+            paragraph.style.color =
+                "rgb(" +
+                fontRed + "," + fontGreen + "," +
+                fontBlue +
+                ")";
+
+            paragraph.style.borderColor =
+                "rgb(" +
+                borderRed + "," +
+                borderGreen + "," +
+                borderBlue +
+                ")";
+
+            paragraph.style.borderWidth =
+                borderWidth + "px";
+        }
+    </script>
+</body>
+
+</html>
